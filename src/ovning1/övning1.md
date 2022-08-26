@@ -9,5 +9,5 @@ loop [while]
    response (message input) [random]
 
    if (empty) [continue or end loop]
-   
+    
 ending (message) [random?]
