@@ -5,7 +5,7 @@ public class XOR {
         int m = 'G';
         int k = '|';
         int c = m^k;
-        System.out.println(Integer.toBinaryString(m^k));
-        System.out.println();
+        System.out.println(Integer.toBinaryString(c));
+        System.out.println(Integer.parseInt(String.valueOf(c)));
     }
 }
