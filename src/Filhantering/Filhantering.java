@@ -4,21 +4,36 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Filhantering {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         BufferedReader Text = openTextFileForReading("Text.txt");
-        ArrayList<String> fileContent = readAllText(inFile);
-        DataOutputStream outFile = openBinaryFileForWriting("info.dat");
-        writeTextAsBinary(fileContent);
+        ArrayList<String> fileContent = readAllText(Text);
+        DataOutputStream outFile = openBinaryFileForWriting("Binary.txt");
+        writeTextAsBinary(outFile);
+    }
+
+
+
+    private static BufferedReader openTextFileForReading(String filename) throws FileNotFoundException {
+        String read;
+        BufferedReader Text;
+        Text = new BufferedReader(new FileReader("Text.txt"));
+        read = Text.readLine();
+
+        while (read != null){
+            read = Text.readLine();
+        }
+
+        return null;
     }
 
     private static ArrayList<String> readAllText(BufferedReader inFile) {
         ArrayList<String> text = new ArrayList<>();
+
+        return text;
     }
 
 
-    private static BufferedReader openTextFileForReading(String filename) {
 
-    }
     private static DataOutputStream openBinaryFileForWriting(String fileName) {
         DataOutputStream outfile;
         try {
@@ -28,6 +43,9 @@ public class Filhantering {
             outfile = new DataOutputStream(System.out);
             //e.printStackTrace();
         }
+        return outfile;
+    }
+    private static void writeTextAsBinary(DataOutputStream outFile) {
     }
 
 }
